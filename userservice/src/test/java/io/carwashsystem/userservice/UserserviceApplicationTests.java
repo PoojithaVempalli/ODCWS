@@ -1,6 +1,7 @@
 package io.carwashsystem.userservice;
 
-import static org.junit.Assert.assertEquals;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -8,8 +9,9 @@ import static org.mockito.Mockito.when;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -20,14 +22,13 @@ import io.carwashsystem.userservice.repo.UserRepository;
 import io.carwashsystem.userservice.service.UserService;
 
 
-@RunWith(SpringRunner.class)
 @SpringBootTest
 public class UserserviceApplicationTests  {
 
-	@Autowired
+	@InjectMocks
 	private UserService service;
 
-	@MockBean
+	@Mock
 	private UserRepository repository;
 
 	@Test

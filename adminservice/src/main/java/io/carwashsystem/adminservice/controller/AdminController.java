@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -80,6 +81,7 @@ public class AdminController {
 		repo1.deleteById(id);
 		return "pack deleted with id "+id;
 	}
+	
 	
 	@PostMapping("/addrating")
 	public String saverating(@RequestBody Ratings rating)

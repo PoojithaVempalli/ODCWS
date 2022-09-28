@@ -30,6 +30,9 @@ public class OrderDetails {
 	@NotEmpty(message = "phone no must not be empty")
 	int phoneNo;
 	
+	public OrderDetails(int i, String string, String string2, String string3, int j, int k, int l) {
+		// TODO Auto-generated constructor stub
+	}
 	public int getOrderId() {
 		return orderId;
 	}

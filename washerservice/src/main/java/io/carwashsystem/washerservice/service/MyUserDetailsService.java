@@ -20,11 +20,11 @@ public class MyUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String name) throws UsernameNotFoundException {
-       //WasherDetails washer=repository.findByName(name);
+       WasherDetails washer=repository.findByName(name);
        
-       //return new User(washer.getName(),washer.getPassword(),new ArrayList<>());
+       return new User(washer.getName(),washer.getPassword(),new ArrayList<>());
     	
-    	 return new User("user", "user",
-                 new ArrayList<>());
+//    	 return new User("user", "user",
+//                 new ArrayList<>());
     }
 }

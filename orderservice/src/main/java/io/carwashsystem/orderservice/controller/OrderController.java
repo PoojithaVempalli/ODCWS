@@ -1,6 +1,7 @@
 package io.carwashsystem.orderservice.controller;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -20,6 +21,7 @@ import io.carwashsystem.orderservice.service.OrderService;
 
 
 @RestController
+@RequestMapping("/order/")
 public class OrderController {
 	
 	@Autowired
@@ -29,11 +31,23 @@ public class OrderController {
 	private OrderService service;
 	
 	@PostMapping("/addorder")
-	 public String addorder( @RequestBody OrderDetails order) {
-	 	service.addorder(order);
-	 	return "Order is Placed with Washer and will be Proceesed soon "
-	 			+order;
+//	 public String addorder( @RequestBody OrderDetails order) {
+//	 	service.addorder(order);
+//	 	return "Order is Placed with Washer and will be Proceesed soon "
+//	 			+order;
+//	 }
+	public ResponseEntity<String> addorder( @RequestBody OrderDetails order) {
+	 	try {
+	 		order = service.addorder(order);
+	 		String result = "Order is Placed with Washer and will be Proceesed soon " + order;
+	 		return new ResponseEntity<String>(result, HttpStatus.CREATED);
+	 	}
+	 	catch(NoSuchElementException e){
+	 		return new ResponseEntity<>(HttpStatus.CONFLICT);
+	 		
+	 	}
 	 }
+
 	
 	@GetMapping("/allorders")
 	public List<OrderDetails> getorder()

@@ -4,6 +4,7 @@ import java.util.Collections;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.Bean;
 
 import springfox.documentation.builders.PathSelectors;
@@ -15,6 +16,7 @@ import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
+@EnableDiscoveryClient
 @EnableSwagger2
 public class AdminserviceApplication {
 
@@ -35,9 +37,9 @@ public class AdminserviceApplication {
 	    return new ApiInfo(
 	      "On Demand Car Wash System", 
 	      "Case Study Post My Training", 
-	      "Janardhan", 
+	      "Admin", 
 	      "Terms of service", 
-	      new Contact("Janardhan", "www.example.com", "qwerty@company.com"), 
+	      new Contact("Poojitha", "www.example.com", "qwerty@company.com"), 
 	      "Free to use", "API license URL", Collections.emptyList());
 	}
 
