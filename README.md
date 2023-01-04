@@ -1,6 +1,5 @@
-			    ON DEMAND CAR WASHING SYSTEM 
-			   [JANARDHAN MUPPIDI]
-			....................................................................................
+ ON DEMAND CAR WASHING SYSTEM
+ ....................................................................................
 When you think about car washing, you need to plan it at least an hour before. And the problem does not end here,
 you even need to stand in a queue to get your turn. It is a cumbersome task and hence many such car washing companies came up with a solution. 
 The on-demand car wash app is now becoming the user’s first choice when planning for a car wash.
